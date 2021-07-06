@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stateproviderapp/auth_service.dart';
+import 'package:stateproviderapp/bloc/sayac/bloc_kullanimi.dart';
 import 'package:stateproviderapp/counter.dart';
+import 'package:stateproviderapp/flutter%20bloc%20paketi%20ile%20sayac%20uygulamas%C4%B1/bloc_paketi_kullanimi.dart';
 import 'package:stateproviderapp/sayac_ile_provider.dart';
 import 'package:stateproviderapp/stream_kullanimi.dart';
 
@@ -79,13 +81,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
               ),
               );
-            }), RaisedButton(
-                child: Text("Sayac With Provider"),
+            }),
+            RaisedButton(
+                child: Text("Sayac With Provider / Stream Kullanımı"),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => StreamKullanimi(),
                   ),
                   );
-                })
+                }),
+            RaisedButton(
+                child: Text("Bloc Kullanımı"),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => BlocKullanimi(),
+                  ),
+                  );
+                }),
+            RaisedButton(
+                child: Text("Bloc Kullanımı / Flutter Block Paketinin kullanımı "),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => BlocPaketiKullanimi(),
+                  ),
+                  );
+                }),
           ],
         ),
       ),
